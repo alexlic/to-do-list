@@ -1,0 +1,44 @@
+<dialog class="modal" [open]="isOpen">
+    <div class="modal-content-container">
+      <h2 class="modal-title">Add a TO-DO</h2>
+      <button
+        class="close-modal-btn fa-regular fa-circle-xmark"
+        (click)="onToggleModal()"
+      ></button>
+      <form>
+        <p>Title</p>
+        <input
+          #input
+          class="todo-input"
+          placeholder="To-Do title"
+          required
+          type="text"
+          [value]="todoTitle"
+          (change)="onTodoInputChange(input.value)"
+        />
+        <div class="sub-todo-title">
+          <p>Sub TO-DOs (optional)</p>
+          <input
+            type="button"
+            class="todo-btn"
+            (click)="onAddSubTodoClick()"
+            value="add"
+          />
+        </div>
+        <div class="sub-todo-section">
+          @for(index of [].constructor(amountOfSubTodos); track index; let i =
+          $index) {
+          <input
+            #input
+            class="todo-input"
+            placeholder="Sub TO-DO"
+            type="text"
+            (change)="onSubTodoInputChange(input.value, i)"
+          />
+          }
+        </div>
+        <button class="todo-btn" (click)="onSubmit()">Submit</button>
+      </form>
+    </div>
+  </dialog>
+  

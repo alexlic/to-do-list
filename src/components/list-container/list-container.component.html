@@ -1,0 +1,15 @@
+<div class="list-container">
+  <app-add-todo-modal [isOpen]="isModalOpen" (toggleModal)="toggleModal()" />
+  <div class="list">
+    <div class="list-container-header">
+      <div class="tag">TO-DOS</div>
+      <button class="add-button" (click)="toggleModal()">+</button>
+    </div>
+    @if (!!todosList.length) { @for (todoItem of todosList; track todoItem.id) {
+    <app-list-item
+      [todoListItem]="todoItem"
+      (onRemoveTodo)="onRemoveTodo(todoItem.id)"
+    />
+    } }
+  </div>
+</div>

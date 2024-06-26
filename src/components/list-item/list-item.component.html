@@ -1,0 +1,20 @@
+@if (todoListItem?.id) {
+    <div
+      class="list-item-container {{
+        !todoListItem?.completed && 'list-item-container__unchecked'
+      }}"
+    >
+      <button class="fa fa-trash-can remove-btn" (click)="onRemove()"></button>
+      <div class="main-todo-item">
+        <app-list-item-option [item]="todoListItem" />
+        @if (!!todoListItem?.subTodos?.length) {
+        <div class="sub-todos-container">
+          @for (todo of todoListItem?.subTodos; track todo.id) {
+          <app-list-item-option [item]="todo" />
+          }
+        </div>
+        }
+      </div>
+    </div>
+    }
+    

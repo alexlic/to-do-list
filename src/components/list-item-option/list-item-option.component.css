@@ -1,0 +1,37 @@
+.option-container {
+    font-size: 16px;
+    line-height: 24px;
+    position: relative;
+  }
+  
+  .checkbox-container {
+    position: absolute;
+    width: 24px;
+  }
+  
+  .option-checkbox {
+    appearance: none;
+    border: 2px solid rgba(64, 148, 204, 1);
+    border-radius: 3px;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+  }
+  
+  .option-checkbox:checked::before {
+    color: rgba(64, 148, 204, 1);
+    font-size: 14px;
+    left: 0.45rem;
+    position: absolute;
+  }
+  
+  .option-title {
+    margin-left: 2rem;
+    color: rgba(50, 71, 85, 1);
+  }
+  
+  .option-title__checked {
+    color: rgba(50, 71, 85, 0.5);
+    margin-left: 2rem;
+  }
+  
